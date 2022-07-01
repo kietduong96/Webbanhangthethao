@@ -1,0 +1,58 @@
+﻿@*CSS cho div DatMua (Đặt mua)*@
+<style type="text/css">
+    #DatMua a{
+        clear:both; background-color:green;
+        color:#00ff21; width:100px;   height:40px;
+        display:block;      float:left;    text-align:center;
+        padding-top:10px;       text-decoration:none;   font-weight:bold;
+    }
+    #DatMua a:hover{ 
+        background-color:#3cb371;
+        color:blue;
+    }
+
+
+
+</style>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<div class="Details">
+    <h3 style="color:white"> THÔNG TIN CHI TIẾT SẢN PHẨM</h3>
+</div>
+<div>
+    <div style="width:40%; float:left; border-left:dotted 1px; border-color:azure">
+        <img src="~/HinhAnh/@Model.AnhBia" style="width:345px; height:390px"/>
+    </div>
+    <div style="width:60%; float:left; padding:10px">
+        <h4 style="font-weight:bold; color:#00ff21">Tên sản phẩm: <span style="color:white"> @Model.TenSP</span> </h4>
+        <p style="text-align:justify"><span style="font-weight:bold; color:#00ff21"> Mô tả: </span> <span style="color:white"> @Model.MoTa </span></p>
+        <p style="font-weight:bold; color:#00ff21"> Giá bán: <span style="color:white; font-size:16pt"> @Model.GiaBan VNĐ</span></p>
+        <div id="DatMua">
+            <a href="@Url.Action("ThemGioHang", "GioHang", new { @iMaSP = @Model.MaSP, @strURL = Request.Url.ToString() })" class="list-group-item">
+                ĐẶT MUA
+            </a>
+
+            <!--hiển thị comments like share trong trang details & hiển thị comments theo mã SP để tránh việc comment 1 bài hiển thị ở toàn bộ details SP-->
+            <!--lấy 5 comments hiển thị ra màn hình-->
+            <div class="fb-comments" data-href="http://localhost:59650/SportStore/Details/@Model.MaSP" 
+                 data-numposts="5" ></div>
+            <div id="fb-root">
+            </div>
+            <fb:like href="http://localhost:59650/SportStore/Details/" send="true" show_faces="true" width="450"></fb:like>
+        </div>
+    </div>
+</div>
+
+<style>
+    @*CSS cho div Details*@
+    .Details {
+        background-color: forestgreen;
+        text-align:center;     
+        padding: 10px;
+    }
+</style>
+
+
+

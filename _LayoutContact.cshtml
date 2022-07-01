@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>  
+     
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap Core CSS -->
+    @*Chèn CSS từ thư mục Content*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/Content/shop-homepage.css" rel="stylesheet" />
+
+    @*Chèn CSS để thiết kế layoutUser*@
+    <link href="~/Content/ThietKeCSS.css" rel="stylesheet" />
+
+    @*Chen CSS fontawesome ký tự*@   
+    <link href="~/Content/fontawesome css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--Thư viện hình online của các icon trong footer-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+   
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<a class="navbar-brand" href="@Url.Action("Index","SportStore")">TRANG CHỦ</a>
+                <a class="navbar-brand" href="#">Liên hệ</a>*@              
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->           
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">    
+                @* thuộc tính style="float:right" là chuyển 2 thẻ DangKy,DangNhap sang bên phải*@                           
+                <ul class="nav navbar-nav"> 
+                    <li>
+                        @Html.ActionLink("TRANG CHỦ","Index", "SportStore")
+                    </li>    
+                    <li>
+                        @Html.ActionLink("Liên hệ","Lienhe","LienHe")
+                    </li>                            
+                    <li>                      
+                         @Html.ActionLink("Đăng ký", "DangKy", "NguoiDung")
+                    </li>
+                    <li>                 
+                         @Html.ActionLink("Đăng nhập", "DangNhap", "NguoiDung")
+                    </li>              
+                    <li>
+                        @Html.Action("GioHangPartial", "GioHang")
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+   
+                    <div>
+                        @RenderBody()
+                        
+                    </div>
+       
+    <!-- /.container -->
+    <div class="container">
+        <hr>
+        <!-- Footer -->
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+
+                <h3>Kiệt <span> Đường</span></h3>
+
+                <p class="footer-links">
+                    <a href="#">Home</a>
+                    ·
+                    <a href="#">Blog</a>
+                    ·
+                    <a href="#">Pricing</a>
+                    ·
+                    <a href="#">About</a>
+                    ·
+                    <a href="#">Faq</a>
+                    ·
+                    <a href="#">Contact</a>
+                </p>
+
+                <p class="footer-company-name">Copyright &copy; Đường Vị Kiệt - 2017</p>
+            </div>
+
+            <div class="footer-center">
+
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>475A Điện Biên Phủ</span> TP.Hồ Chí Minh, Việt Nam</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>0933671087</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">kiet0933671087@gmail.com</a></p>
+                </div>
+
+            </div>
+
+            <div class="footer-right">
+
+                <p class="footer-company-about">
+                    <span>Thành viên nhóm: </span>
+                    <p style="color:green">Đường Vị Kiệt</p>
+                    <p style="color:green">Trương Đình Hiếu</p>
+                    <p style="color:green">Nguyễn Đăng Khoa</p>
+                </p>
+
+                <div class="footer-icons">
+
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+
+                </div>
+
+            </div>
+
+        </footer>
+        </div>
+        @*Chèn Jquery từ thư mục Scripts *@
+        <!-- /.container -->
+        <!-- jQuery -->
+        <script src="~/Scripts/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        @*JS bootstrap reponsive trên mọi thiết bị*@
+        <script src="~/Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>

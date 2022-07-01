@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_LayoutLoginUser.cshtml";
+}
+
+<table align="center">
+    <div class="container">
+        <h2 class="intro-text text-center">
+            <strong style="color:#00ff21"> Chào mừng bạn đến với trang Đăng Ký </strong>
+        </h2>
+        <hr>
+    </div> 
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+            <tr style="height:40px">
+                <td style="color: #00ff21">Họ tên khách hàng: </td>
+                <td>@Html.TextBox("HoTen")
+                @ViewData["Loi1"]
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td style="color: #00ff21">Tên đăng nhập:</td>
+                <td>
+                    @Html.TextBox("TaiKhoan")
+                    @ViewData["Loi2"]</td>
+            </tr>
+            <tr style="height:40px">
+                <td style="color: #00ff21">Mật khẩu:</td>
+                <td>
+                    @Html.Password("MatKhau")
+                    @ViewData["Loi3"]</td>
+            </tr>
+            <tr style="height:40px">
+                <td style="color: #00ff21">Nhập lại mật khẩu</td>
+                <td>
+                    @Html.Password("NhapLaiMatKhau")
+                    @ViewData["Loi4"]</td>
+            </tr>
+            <tr style="height:40px">
+                <td style="color: #00ff21">Email: </td>
+                <td>
+                    @Html.TextBox("Email")
+                    @ViewData["Loi5"]
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td style="color: #00ff21">Địa chỉ: </td>
+                <td>
+                    @Html.TextBox("DiaChiKH")
+                    @ViewData["Loi6"]
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td style="color: #00ff21">Điện thoại:</td>
+                <td>
+                    @Html.TextBox("DienThoaiKH")
+                    @ViewData["Loi7"]</td>
+            </tr>
+            <tr style="height:40px">
+                <td style="color: #00ff21">Ngày sinh:</td>
+                <td>
+                    <input type="date" name="NgaySinh" />
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td></td>
+                <td>
+                    <button type="submit" class="btn btn-danger">Đăng ký</button>
+                </td>
+            </tr>
+    }
+</table>
+
